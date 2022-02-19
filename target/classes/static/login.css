@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+.login-form {
+   box-shadow: 0 0 35px 0 rgba(84, 84, 84, 0.62);
+   margin: 2.5em 30%; 
+   background-color: white;
+   border-radius: 10px;
+   padding-bottom: 1.5em;
+}
+
+.select{
+	margin: auto 30%;
+}

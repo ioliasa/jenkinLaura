@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: com.example.test.SpringHibernateJpaApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.23 s <<< FAILURE! - in com.example.test.SpringHibernateJpaApplicationTests
+com.example.test.SpringHibernateJpaApplicationTests  Time elapsed: 0.228 s  <<< ERROR!
+java.lang.IllegalStateException: Unable to find a @SpringBootConfiguration, you need to use @ContextConfiguration or @SpringBootTest(classes=...) with your test
+

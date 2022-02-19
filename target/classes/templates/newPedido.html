@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Nuevo pedido</title>
+<link th:href="@{/new.css}" rel="stylesheet" />
+<link th:href="@{/login.css}" rel="stylesheet" />
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	crossorigin="anonymous">
+<link rel="stylesheet" href="login.css">
+
+</head>
+<body class="m-0 row justify-content-center align-items-center">
+	<section class="container">
+		<div class="col-auto p-5 text-center">
+			<h1>Nuevo pedido</h1>
+
+			<h2>Listado de productos</h2>
+			<form action="#" th:action="@{/newPedido/submit}"
+				th:object="${listaProductos}" method="post">
+				<table class="table table-hover mt-5 bg-white bg-opacity-50">
+					<thead class="thead-dark">
+						<tr>
+							<th scope="col">Nombre</th>
+							<th scope="col">Precio</th>
+							<th scope="col">Cantidad</th>
+							<th scope="col">Imagen</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="producto : ${listaProductos}">
+							<td th:text="${producto.nombre}" />
+							<td th:text="${producto.precio}" />
+							<td><input type="number" placeholder=0 min=0 name="cantidad" /></td>
+							<td ><img th:src="${producto.img}" width="200" height="140"/>  </td>
+						</tr>
+					</tbody>
+				</table>
+				<!-- Tanto si el envió se marca como a domicilio y no se ha guardado dirección en la cuenta del usuario 
+		como si se marca otra dirección, se preguntará por la dirección más adelante -->
+
+				<h2 class="mt-5">Modo de envío</h2>
+				<div class="form-group mt-2 select">
+					<select name="envio" id="envio" class="form-control text-center">
+						<option value="domicilio">Envío a domicilio</option>
+						<option value="recoger">Recogida en tienda</option>
+						<option value="cambioDireccion">Envío a otra dirección</option>
+					</select> <input type="submit" value="Aceptar" class="mt-5 btn btn-primary" name="idPedido"/>
+			</form>
+		</div>
+		</div>
+	</section>
+</body>
+</html>
